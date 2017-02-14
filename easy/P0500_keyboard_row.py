@@ -91,3 +91,31 @@ class Solution:
             if i == len(word):
                 one_row.append(word)
         return one_row
+
+
+#  Other responses
+def findWords(words):
+    keywords = ['qwertyuiop', 'asdfghjkl', 'zxcvbnm']
+    res = []
+    for i in words:
+        for j in keywords:
+            if set(i.lower()).issubset(set(j)):
+                res.append(i)
+    return res
+
+
+import re
+def findWords(self, words):
+    return filter(re
+                  .compile('(?i)([qwertyuiop]*|[asdfghjkl]*|[zxcvbnm]*)$')
+                  .match,
+                  words)
+
+
+def findWords(words):
+        return [word
+                for row in [set('qwertyuiop'),
+                            set('asdfghjkl'),
+                            set('zxcvbnm')]
+                for word in words
+                if set(word.lower()).issubset(row)]
