@@ -55,5 +55,15 @@ class Solution:
         comp = self.compute_complement(bin_n)
         return self.int_to_bin(comp)
 
+
+# Other Solutions
+class Solution2:
+    def findComplement(self, num):
+        i = 1
+        while i <= num:
+            i = i << 1
+        return (i - 1) ^ num
+
 if __name__ == '__main__':
     print(Solution().findComplement(5))
+    print(Solution2().findComplement(5))
