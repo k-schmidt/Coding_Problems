@@ -1,4 +1,4 @@
-# Leet Code
+# Coding Problems
 
 ## Problem Soving Steps
 1. Understand the problem
