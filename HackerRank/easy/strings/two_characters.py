@@ -22,12 +22,12 @@ def check_t(t_str):
 
 def main(s_str):
     uniq_chars = get_uniq_chars(s_str)
-    return max([check_t("".join(st
+    return max((check_t("".join(st
                                 for st
                                 in s_str
                                 if st not in char_combo))
                 for char_combo
-                in combinations(uniq_chars, len(uniq_chars) - 2)])
+                in combinations(uniq_chars, len(uniq_chars) - 2)))
 
 if __name__ == '__main__':
     n = int(input().strip())
