@@ -10,12 +10,6 @@ import operator
 
 
 def islandPerimeter(grid):
-    print(list(map(list, zip(*grid))))
-    for row in grid + list(map(list, zip(*grid))):
-        print([0] + row != row + [0])
-        # print([0] + row, row + [0])
-        # print(operator.ne([0] + row, row + [0]))
-
     return sum(sum(map(operator.ne, [0] + row, row + [0]))
                for row in grid + list(map(list, zip(*grid))))
 
