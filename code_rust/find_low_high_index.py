@@ -9,7 +9,7 @@ def find_low_index(array, key):
     mid = high // 2
 
     while low <= high:
-        if key < array[mid]:
+        if array[mid] >= key:
             high = mid - 1
         else:
             low = mid + 1
@@ -27,10 +27,10 @@ def find_high_index(array, key):
     mid = high // 2
 
     while low <= high:
-        if key <= array[mid]:
-            high = mid - 1
-        else:
+        if array[mid] <= key:
             low = mid + 1
+        else:
+            high = mid - 1
         mid = low + (high - low) // 2
 
     if array[high] == key:
