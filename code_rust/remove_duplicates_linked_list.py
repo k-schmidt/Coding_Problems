@@ -9,9 +9,13 @@ def remove_duplicates(head):
 
     # Track existing values.
     dup_set = set()
+    dup_set.add(head.data)
     curr = head
-    while curr is not None:
-        if curr.data not in dup_set:
-            dup_set.add(curr.data)
-        curr = curr.next
+
+    while curr.next is not None:
+        if curr.next.data in dup_set:
+            curr.next = curr.next.next
+        else:
+            dup_set.add(curr.next.data)
+            curr = curr.next
     return head
